@@ -12,7 +12,7 @@ from pulp import *
 from collections import Counter
 from more_itertools import unique_everseen
 
-sales=pd.read_csv("sales_lift.csv",header=None) #input file
+sales=pd.read_csv("sales_lift_input.csv",header=None)
 lift=sales.iloc[2:,1:]
 lift=np.array(lift)
 lift = lift.astype(np.int) # read the lifts from csv
@@ -60,7 +60,7 @@ col_con=[1,0,0,2,2,3,1,1]
 dec_var=np.array(dec_var)
 col_data=[]
 for j in range(len(brands)):
-    col_data.append(list(zip(*dec_var)[j]))
+    col_data.append(list(zip(*dec_var))[j])
     prob+=lpSum(col_data[j])<=col_con[j]
 
 #write the problem
