@@ -11,7 +11,9 @@ from pulp import *
 from collections import Counter
 from more_itertools import unique_everseen
 
-sales=pd.read_csv("sales_lift.csv",header=None)
+# sales=pd.read_csv("sales_lift.csv",header=None)
+sales=pd.read_csv("sales_lift_input.csv",header=None)
+
 lift=sales.iloc[2:,1:]
 lift=np.array(lift)
 lift = lift.astype(np.int) # read the lifts from csv
